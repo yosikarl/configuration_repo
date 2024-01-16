@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: "git@github.com:yosikarl/configuration_repo.git"
-    path: "apps"
+    path: "infra-apps/apps"
     targetRevision: HEAD
   syncPolicy:
     automated:
