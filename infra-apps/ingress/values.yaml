@@ -1,10 +1,10 @@
-# Default values for ingress.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
-
-spec:
-  destination:
-    server: https://kubernetes.default.svc
-  source:
-    repoURL: https://github.com/argoproj/argocd-example-apps
-    targetRevision: HEAD
+# Configuration for exporting metrics, see https://kubernetes.github.io/ingress-nginx/user-guide/monitoring/
+controller:
+  ingressClassResource:
+    default: true
+  metrics:
+    enabled: false
+    serviceMonitor:
+      enabled: true
+      additionalLabels:
+        release: "kube-prometheus-stack" # name of the helm release for the kube-prometheus-stack
